@@ -1,0 +1,3 @@
+<app-toolbar [showSideBar]="showSideBar" (onToggleSideBar)="setSideBar($event)"></app-toolbar>
+<app-sidebar *ngIf="showSideBar"></app-sidebar>
+<div *ngIf="showSideBar" class="sm:ml-64"></div>

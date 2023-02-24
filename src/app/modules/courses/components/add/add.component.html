@@ -1,0 +1,61 @@
+<h1 class="text-3xl font-bold">Add a course:</h1>
+<hr class="my-3">
+<app-action-bar></app-action-bar>
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <div class="mb-6">
+    <label for="course-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+    <input 
+      type="text" 
+      id="course-name" 
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+      placeholder="Course name"
+      formControlName="name"
+    >
+    <div *ngIf="controlHasAnError('name')">
+      <p class="text-red-600 mt-2">Name is required.</p>
+    </div>
+  </div>
+  <div class="mb-6">
+    <label for="start-date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Start Date</label>
+    <input 
+      type="date" 
+      id="start-date" 
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+      formControlName="startDate"
+    >
+    <div *ngIf="controlHasAnError('startDate')">
+      <p class="text-red-600 mt-2">Start date is required.</p>
+    </div>
+  </div>
+  <div class="mb-6">
+    <label for="end-date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">End Date</label>
+    <input 
+      type="date" 
+      id="end-date" 
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      formControlName="endDate"
+    >
+    <div *ngIf="controlHasAnError('endDate')">
+      <p class="text-red-600 mt-2">End date is required.</p>
+    </div>
+  </div>
+  <div class="mb-6">
+    <label for="num-vacancies" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Num. vacancies</label>
+    <input 
+      type="number" 
+      id="course-name" 
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+      placeholder="10"
+      formControlName="openVacancies"
+    >
+    <div *ngIf="controlHasAnError('openVacancies')">
+      <p class="text-red-600 mt-2">Open vacancies must be a positive value.</p>
+    </div>
+  </div>
+  <button 
+    type="submit"
+    class="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-3 py-1.5"
+  >
+    Add course
+  </button>
+</form>

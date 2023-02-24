@@ -2,9 +2,12 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'shuchiin-academy';
+export class AppComponent { 
+  protected showSideBar: boolean = false;
+
+  setShowSideBar(state: boolean): void {
+    this.showSideBar = state;
+  }
 }
